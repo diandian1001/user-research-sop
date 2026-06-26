@@ -30,7 +30,8 @@ user-research-sop/
 │   ├── 04-数据分析.md
 │   ├── 05-报告交付.md
 │   └── 06-Agent-Loop.md
-├── examples/                 ← 填写示例（脱敏真实案例）
+├── examples/                 ← 填写示例+完整案例Walkthrough
+│   ├── 完整案例-Walkthrough.md  ← 🔥 从头到尾走一遍，新人必看
 │   ├── 需求确认表-示例.md
 │   ├── 访谈记录表-示例.md
 │   └── 数据提需模板-示例.md
@@ -40,6 +41,14 @@ user-research-sop/
     ├── 数据提需模板.md
     └── Agent-Loop-审查清单.md
 ```
+
+---
+
+## 🚀 最直接的开始方式
+
+**不看任何文档，直接看这个：** [`examples/完整案例-Walkthrough.md`](examples/完整案例-Walkthrough.md)
+
+它是一个完整的故事：从"运营同事说做个调研"到"交付报告"，每一步该做什么、该复制哪条提示词、该填哪张表，全部串在一起。读完这篇你就知道怎么用了。
 
 ---
 
