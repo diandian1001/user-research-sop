@@ -1,167 +1,170 @@
-# 用户研究标准作业流程（SOP）V2.1
+# User Research Standard Operating Procedure (SOP) V2.1
 
-一套**开箱即用**的用研方法论，适用于问卷调研、用户访谈、行为数据分析和竞品研究。
+[中文版](README_zh.md)
 
-> 不管你是刚入行的用研新人，还是想用AI提效的资深研究员，这套SOP都能直接用。
+An **out-of-the-box** user research methodology covering survey design, user interviews, behavioral data analysis, and competitive research.
 
----
-
-## ✨ 它能帮你做什么
-
-- 📋 **需求对齐**：接到模糊需求时，用三要素确认表把需求锁死再动手
-- 📝 **问卷/提纲设计**：按规范出初稿，避免"做完才发现选项漏了"
-- 📊 **数据分析**：定量5步+定性4步，每步有质控要点，不靠感觉
-- 📄 **报告交付**：结论先行结构+自查清单，交出去的东西不用二次加工
-- 🤖 **AI增强（Agent Loop）**：接入多个AI模型交叉审查，自动发现你漏掉的问题
+> Whether you're a junior researcher just getting started or a seasoned professional looking to leverage AI, this SOP works right out of the box.
 
 ---
 
-## 📁 项目结构
+## ✨ What Can It Do For You
+
+- 📋 **Requirement Alignment** — Lock down ambiguous requests with a 3-field confirmation checklist before you start
+- 📝 **Survey / Interview Guide Design** — Follow structured guidelines to draft questionnaires and discussion guides
+- 📊 **Data Analysis** — Quantitative 5-step + Qualitative 4-step frameworks, each with built-in quality checks
+- 📄 **Report Delivery** — Conclusion-first structure + pre-delivery checklist so your output is ready to present as-is
+- 🤖 **AI Enhancement (Agent Loop)** — Multi-model cross-review that automatically catches blind spots you might miss
+
+---
+
+## 📁 Project Structure
 
 ```
 user-research-sop/
-├── README.md                 ← 你在看的这个文件
-├── SKILL.md                  ← 完整SOP文档（核心）
-├── LICENSE                   ← MIT开源协议
-├── prompt-templates/         ← 各阶段可复制粘贴的提示词
+├── README.md                 ← You are here (English)
+├── README_zh.md              ← 中文版说明文档
+├── SKILL.md                  ← Full SOP document (core)
+├── LICENSE                   ← MIT License
+├── prompt-templates/         ← Copy-paste prompts for each phase
 │   ├── 01-需求承接.md
 │   ├── 02-研究设计.md
 │   ├── 03-数据采集.md
 │   ├── 04-数据分析.md
 │   ├── 05-报告交付.md
 │   └── 06-Agent-Loop.md
-├── examples/                 ← 填写示例+完整案例Walkthrough
-│   ├── 完整案例-Walkthrough.md  ← 🔥 从头到尾走一遍，新人必看
+├── examples/                 ← Filled examples + full walkthrough
+│   ├── 完整案例-Walkthrough.md  ← 🔥 End-to-end walkthrough, start here
 │   ├── 需求确认表-示例.md
 │   ├── 访谈记录表-示例.md
 │   └── 数据提需模板-示例.md
-└── templates/                ← 空白模板（直接复制使用）
+└── templates/                ← Blank templates (copy & use)
     ├── 需求确认表.md
     ├── 访谈记录表.md
     ├── 数据提需模板.md
     └── Agent-Loop-审查清单.md
 ```
 
----
-
-## 🚀 最直接的开始方式
-
-**不看任何文档，直接看这个：** [`examples/完整案例-Walkthrough.md`](examples/完整案例-Walkthrough.md)
-
-它是一个完整的故事：从"运营同事说做个调研"到"交付报告"，每一步该做什么、该复制哪条提示词、该填哪张表，全部串在一起。读完这篇你就知道怎么用了。
+> **Note:** Templates and examples are in Chinese. If you're using this for a Chinese-speaking research context, they're ready to use as-is. For non-Chinese contexts, use them as structural references.
 
 ---
 
-## ⚡ 快速开始（3步上手）
+## 🚀 Fastest Way to Start
 
-### 第1步：明确你要做什么
+**Skip all docs and read this one file:** [`examples/完整案例-Walkthrough.md`](examples/完整案例-Walkthrough.md)
 
-接到用研需求后，打开 `templates/需求确认表.md`，填写三个字段：
+It's a complete story: from "a stakeholder asks for a research project" to "delivering the final report." Every step, every prompt to copy, every template to fill — connected end to end. Read it once and you'll know exactly how to use this SOP.
+
+---
+
+## ⚡ Quick Start (3 Steps)
+
+### Step 1: Clarify What You Need To Do
+
+Open `templates/需求确认表.md` and fill in three fields:
 
 ```markdown
-## 研究目的
-支撑什么决策？（例：决定Q3游戏权益是否新增《原神》定向流量包）
+## Research Objective
+What decision does this support? (e.g., Decide whether to add a new data package for Game X in Q3)
 
-## 交付标准
-产出什么？给谁看？（例：结论页PPT，给内部管理层）
+## Deliverable
+What to produce and for whom? (e.g., Executive summary PPT for leadership)
 
-## 时间节点
-什么时候要？（例：7月15日数据回收截止，7月22日报告提交）
+## Timeline
+When is the deadline? (e.g., Data collection by July 15, report delivered by July 22)
 ```
 
-> 💡 如果需求方说不清楚目的，**不要启动**。退回对齐后再开始。
+> 💡 If the stakeholder can't articulate the objective clearly, **don't start.** Push back and align before proceeding.
 
-### 第2步：选择方法，按流程走
+### Step 2: Pick Your Method, Follow the Flow
 
-根据问题类型选方法：
+| Your problem | Recommended method | See chapter |
+|-------------|-------------------|------------|
+| Don't know what users are thinking | In-depth interviews | [SKILL.md Phase 2 — Interview Guide](SKILL.md#24-访谈提纲设计规范) |
+| Need to validate a hypothesis | Survey / questionnaire | [SKILL.md Phase 2 — Survey Design](SKILL.md#22-问卷设计规范) |
+| What are competitors doing | Desktop research + text clustering | [SKILL.md Sub-process A — Competitive Research](SKILL.md#子流程a竞品研究专项) |
+| Where are users dropping off | Funnel analysis | [SKILL.md Sub-process B — Funnel Analysis](SKILL.md#子流程b漏斗转化分析专项) |
 
-| 你要解决的问题 | 用什么方法 | 看哪一章 |
-|---------------|-----------|---------|
-| 不知道用户在想什么 | 深度访谈 | [SKILL.md 阶段二](SKILL.md#24-访谈提纲设计规范) |
-| 要验证某个假设 | 问卷调研 | [SKILL.md 阶段二](SKILL.md#22-问卷设计规范) |
-| 竞品在做什么 | 桌面研究+文本聚类 | [SKILL.md 子流程A](SKILL.md#子流程a竞品研究专项) |
-| 用户在哪一步流失 | 漏斗分析 | [SKILL.md 子流程B](SKILL.md#子流程b漏斗转化分析专项) |
+### Step 3: Add AI (Optional but Recommended)
 
-### 第3步：用AI辅助（可选但推荐）
+If you want AI to review your survey draft or check your report, see `prompt-templates/06-Agent-Loop.md` for multi-model review setup.
 
-如果你想让AI帮你审查问卷、检查报告，参考 `prompt-templates/06-Agent-Loop.md` 配置多模型审查。
-
-> 💡 **没有AI也能用**：整个SOP是纯方法论，不依赖任何AI工具。AI只是加速器，不是必需品。
+> 💡 **Works without AI too.** The entire SOP is a pure methodology — no AI tools required. AI is an accelerator, not a requirement.
 
 ---
 
-## 🤖 Agent Loop 是什么？
+## 🤖 What Is an Agent Loop?
 
-Agent Loop = 让两个AI模型互相审查，帮你发现盲区。
+An Agent Loop = two AI models reviewing each other's work to catch blind spots.
 
 ```
-你写的问卷初稿
+Your survey draft
       ↓
-主模型（Claude/GPT）→ 审查措辞、逻辑、覆盖度
+Primary model (Claude/GPT) → Reviews wording, logic, coverage
       ↓
-审查模型（DeepSeek）→ 找事实错误、遗漏维度、反例
+Review model (DeepSeek) → Finds factual errors, missing dimensions, counterexamples
       ↓
-你确认修改 → 进入下一阶段
+You confirm edits → Proceed to next phase
 ```
 
-**详细配置指南**：[`prompt-templates/06-Agent-Loop.md`](prompt-templates/06-Agent-Loop.md)
+**Setup guide:** [`prompt-templates/06-Agent-Loop.md`](prompt-templates/06-Agent-Loop.md)
 
 ---
 
-## 📌 前置依赖
+## 📌 Prerequisites
 
-### 必需（0成本）
+### Required (Free)
 
-- 一个能写Markdown的编辑器（VS Code、Typora，甚至记事本都行）
-- 一个AI对话工具（ChatGPT、Claude、DeepSeek、Kimi，任选其一）
+- Any Markdown editor (VS Code, Typora, even Notepad works)
+- An AI chat tool (ChatGPT, Claude, DeepSeek, Kimi — pick any one)
 
-### 推荐（有则更好）
+### Recommended
 
-- **双AI模型**：一个生成，一个审查（比如Claude+DeepSeek）
-- **Tavily API**：用于竞品数据搜索（免费额度够用）
-- **Hermes Agent**：自动加载SOP并执行Agent Loop（可选）
+- **Dual AI models**: one for generation, one for review (e.g., Claude + DeepSeek)
+- **Tavily API**: for competitive data search (free tier is enough)
+- **Hermes Agent**: auto-loads this SOP and runs the Agent Loop (optional)
 
-### 完全不需要
+### Not Required
 
-- ❌ 不需要写代码
-- ❌ 不需要安装任何软件
-- ❌ 不需要付费API（免费模型就够）
-
----
-
-## ❓ 常见问题
-
-**Q：我没有DeepSeek/第二个AI模型怎么办？**
-A：用同一个模型也能跑。在同一个对话里先让它出初稿，再开一个新对话让它审查初稿。效果比双模型差一些，但比没有强。
-
-**Q：我是一个人做用研，没有团队怎么办？**
-A：这套SOP就是为单人设计的。Agent Loop的"审查模型"替代了同事review的角色。
-
-**Q：我不是做用研的，能用吗？**
-A：能。产品经理做竞品分析、运营做用户调研、创业者做市场验证，都能用。核心方法论是通用的。
-
-**Q：怎么在Hermes Agent里用？**
-A：把 `SKILL.md` 放到 `~/.hermes/skills/` 目录下，Hermes会自动识别并加载。以后你说"帮我做用研"，它会按SOP流程走。
-
-**Q：我想修改SOP内容怎么办？**
-A：Fork这个仓库，改完提PR。或者直接在本地改SKILL.md，适合你自己的业务场景。
+- ❌ No coding needed
+- ❌ No software installation needed
+- ❌ No paid APIs (free models work fine)
 
 ---
 
-## 📝 版本记录
+## ❓ FAQ
 
-| 版本 | 日期 | 变更 |
-|------|------|------|
-| V1.0 | 2026-06 | 六阶段线性流程+4个模板 |
-| V2.0 | 2026-06 | 引入Agent Loop、踩坑预警、子流程 |
-| V2.1 | 2026-06 | 重写README、加Prompt模板、填写示例、FAQ |
+**Q: What if I only have one AI model (no second model for review)?**
+A: You can still use it. Draft in one conversation, then open a new conversation and ask the model to review your draft. The effect is slightly weaker than dual-model review, but much better than nothing.
+
+**Q: I'm doing user research solo — no team. Can I still use this?**
+A: Absolutely. This SOP was designed for solo researchers. The Agent Loop's "review model" replaces the role of a colleague doing a peer review.
+
+**Q: I'm not a user researcher — can I use this?**
+A: Yes. Product managers doing competitive analysis, operations teams doing user research, entrepreneurs validating markets — the core methodology is universal.
+
+**Q: How do I use this with Hermes Agent?**
+A: Place `SKILL.md` in your `~/.hermes/skills/` directory. Hermes will auto-detect and load it. Then just say "help me do user research" and it will follow the SOP workflow.
+
+**Q: How do I modify the SOP content?**
+A: Fork this repo, make your changes, and submit a PR. Or edit `SKILL.md` locally to tailor it to your specific business context.
+
+---
+
+## 📝 Changelog
+
+| Version | Date | Changes |
+|---------|------|---------|
+| V1.0 | 2026-06 | Six-phase linear workflow + 4 templates |
+| V2.0 | 2026-06 | Added Agent Loop, pitfall warnings, sub-processes |
+| V2.1 | 2026-06 | Rewritten README, 6 prompt templates, 3 examples, FAQ |
 
 ---
 
 ## 📄 License
 
-MIT — 随便用，商用也行，注明出处就好。
+MIT — Use it however you want, including commercially. Just give credit.
 
 ---
 
-> 作者：[diandian1001](https://github.com/diandian1001) · 用户研究员 · 深圳
+> Author: [diandian1001](https://github.com/diandian1001) · User Researcher · Shenzhen
