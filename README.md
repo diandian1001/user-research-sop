@@ -1,4 +1,7 @@
 # User Research Standard Operating Procedure (SOP) V2.1
+[![License: MIT](https://img.shields.io/badge/License-MIT-7c5cfc.svg)](https://opensource.org/licenses/MIT)
+[![Stars](https://img.shields.io/github/stars/diandian1001/user-research-sop?style=social)](https://github.com/diandian1001/user-research-sop)
+[![Version](https://img.shields.io/badge/Version-V2.1-10b981.svg)](https://github.com/diandian1001/user-research-sop)
 
 [中文版](README_zh.md)
 
