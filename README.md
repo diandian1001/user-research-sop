@@ -1,173 +1,125 @@
-# User Research Standard Operating Procedure (SOP) V2.1
-[![License: MIT](https://img.shields.io/badge/License-MIT-7c5cfc.svg)](https://opensource.org/licenses/MIT)
-[![Stars](https://img.shields.io/github/stars/diandian1001/user-research-sop?style=social)](https://github.com/diandian1001/user-research-sop)
-[![Version](https://img.shields.io/badge/Version-V2.1-10b981.svg)](https://github.com/diandian1001/user-research-sop)
+# User Research Standard Operating Procedure (SOP) V3.0
 
 [中文版](README_zh.md)
 
-An **out-of-the-box** user research methodology covering survey design, user interviews, behavioral data analysis, and competitive research.
+[![License: MIT](https://img.shields.io/badge/License-MIT-7c5cfc.svg)](https://opensource.org/licenses/MIT)
+[![Stars](https://img.shields.io/github/stars/diandian1001/user-research-sop?style=social)](https://github.com/diandian1001/user-research-sop)
+[![Version](https://img.shields.io/badge/Version-V3.0-10b981.svg)](https://github.com/diandian1001/user-research-sop)
 
-> Whether you're a junior researcher just getting started or a seasoned professional looking to leverage AI, this SOP works right out of the box.
+An **AI-guided user research workflow** — give this project to any AI tool (ChatGPT/Claude/Hermes/Trae), and it becomes your research assistant, walking you step by step from need understanding to report delivery.
 
----
-
-## ✨ What Can It Do For You
-
-- 📋 **Requirement Alignment** — Lock down ambiguous requests with a 3-field confirmation checklist before you start
-- 📝 **Survey / Interview Guide Design** — Follow structured guidelines to draft questionnaires and discussion guides
-- 📊 **Data Analysis** — Quantitative 5-step + Qualitative 4-step frameworks, each with built-in quality checks
-- 📄 **Report Delivery** — Conclusion-first structure + pre-delivery checklist so your output is ready to present as-is
-- 🤖 **AI Enhancement (Agent Loop)** — Multi-model cross-review that automatically catches blind spots you might miss
+> **V3.0**: Rewritten as an AI guidance script. Rules only, no fixed templates — AI generates materials based on your specific research needs.
 
 ---
 
-## 📁 Project Structure
+## What It Does
+
+Instead of giving you a bunch of files to figure out, this project gives your AI a complete research workflow. The AI asks you questions one by one, recommends the right method, generates materials, guides analysis, and helps you write the report.
+
+```
+Step 1        Step 2         Step 3         Step 4         Step 5
+Understand → Recommend → Generate → Analyze → Report
+ needs        method      materials    data       delivery
+```
+
+## How to Use
+
+### Option 1: With an AI Agent (Recommended)
+
+Copy this repo URL and paste it into your AI tool:
+
+```
+https://github.com/diandian1001/user-research-sop
+```
+
+Then say: *"帮我做用户研究"* or *"Help me do user research"*
+
+The AI will read `SKILL.md` and guide you through the entire process.
+
+### Option 2: Read SKILL.md Directly
+
+Open `SKILL.md` and follow the 5-step workflow manually.
+
+---
+
+## What the AI Will Guide You Through
+
+| Step | What Happens |
+|------|-------------|
+| Step 1: Understand Needs | 4 questions (multiple choice + fill-in) to clarify your research objective |
+| Step 2: Recommend Method | Decision tree picks the right method for your problem and timeline |
+| Step 3: Generate Materials | AI creates interview outlines or survey drafts based on rules, not fixed templates |
+| Step 4: Analysis Guidance | Step-by-step framework for quantitative (5 steps) or qualitative (4 steps) analysis |
+| Step 5: Report Generation | Fill-in-the-blank template generates a complete Markdown report |
+
+---
+
+## Supported Research Methods
+
+| Method | When to Use |
+|--------|-----------|
+| In-depth Interview | Exploratory research — understanding "why" |
+| Survey/Questionnaire | Validation research — quantifying "what" and "how much" |
+| Desktop Research | Competitive analysis — what are others doing |
+| Funnel Analysis | Conversion analysis — where are users dropping off |
+
+---
+
+## File Structure
 
 ```
 user-research-sop/
-├── README.md                 ← You are here (English)
-├── README_zh.md              ← 中文版说明文档
-├── SKILL.md                  ← Full SOP document (core)
-├── LICENSE                   ← MIT License
-├── prompt-templates/         ← Copy-paste prompts for each phase
-│   ├── 01-需求承接.md
-│   ├── 02-研究设计.md
-│   ├── 03-数据采集.md
-│   ├── 04-数据分析.md
-│   ├── 05-报告交付.md
-│   └── 06-Agent-Loop.md
-├── examples/                 ← Filled examples + full walkthrough
-│   ├── 完整案例-Walkthrough.md  ← 🔥 End-to-end walkthrough, start here
+├── SKILL.md                 ← Core: AI guidance script (V3.0)
+├── README.md                ← This file (English)
+├── README_zh.md             ← 中文版说明文档
+├── LICENSE                  ← MIT License
+├── templates/               ← Blank templates (copy & use)
+│   ├── 需求确认表.md
+│   ├── 访谈记录表.md
+│   ├── 数据提需模板.md
+│   └── Agent-Loop-审查清单.md
+├── examples/                ← Filled examples
+│   ├── 完整案例-Walkthrough.md
 │   ├── 需求确认表-示例.md
 │   ├── 访谈记录表-示例.md
 │   └── 数据提需模板-示例.md
-└── templates/                ← Blank templates (copy & use)
-    ├── 需求确认表.md
-    ├── 访谈记录表.md
-    ├── 数据提需模板.md
-    └── Agent-Loop-审查清单.md
+└── prompt-templates/        ← Copy-paste prompts for each phase
+    ├── 01-需求承接.md
+    ├── 02-研究设计.md
+    ├── 03-数据采集.md
+    ├── 04-数据分析.md
+    ├── 05-报告交付.md
+    └── 06-Agent-Loop.md
 ```
 
-> **Note:** Templates and examples are in Chinese. If you're using this for a Chinese-speaking research context, they're ready to use as-is. For non-Chinese contexts, use them as structural references.
+---
+
+## What's New in V3.0
+
+- **AI-first design**: SKILL.md is now a conversation script for AI agents, not a static document
+- **Rules over templates**: Interview outlines and surveys are generated by AI based on your needs, not copied from fixed templates
+- **Decision tree**: Method selection is now guided by a clear decision logic
+- **Quality checks**: Built-in quality control at every step
 
 ---
 
-## 🚀 Fastest Way to Start
-
-**Skip all docs and read this one file:** [`examples/完整案例-Walkthrough.md`](examples/完整案例-Walkthrough.md)
-
-It's a complete story: from "a stakeholder asks for a research project" to "delivering the final report." Every step, every prompt to copy, every template to fill — connected end to end. Read it once and you'll know exactly how to use this SOP.
-
----
-
-## ⚡ Quick Start (3 Steps)
-
-### Step 1: Clarify What You Need To Do
-
-Open `templates/需求确认表.md` and fill in three fields:
-
-```markdown
-## Research Objective
-What decision does this support? (e.g., Decide whether to add a new data package for Game X in Q3)
-
-## Deliverable
-What to produce and for whom? (e.g., Executive summary PPT for leadership)
-
-## Timeline
-When is the deadline? (e.g., Data collection by July 15, report delivered by July 22)
-```
-
-> 💡 If the stakeholder can't articulate the objective clearly, **don't start.** Push back and align before proceeding.
-
-### Step 2: Pick Your Method, Follow the Flow
-
-| Your problem | Recommended method | See chapter |
-|-------------|-------------------|------------|
-| Don't know what users are thinking | In-depth interviews | [SKILL.md Phase 2 — Interview Guide](SKILL.md#24-访谈提纲设计规范) |
-| Need to validate a hypothesis | Survey / questionnaire | [SKILL.md Phase 2 — Survey Design](SKILL.md#22-问卷设计规范) |
-| What are competitors doing | Desktop research + text clustering | [SKILL.md Sub-process A — Competitive Research](SKILL.md#子流程a竞品研究专项) |
-| Where are users dropping off | Funnel analysis | [SKILL.md Sub-process B — Funnel Analysis](SKILL.md#子流程b漏斗转化分析专项) |
-
-### Step 3: Add AI (Optional but Recommended)
-
-If you want AI to review your survey draft or check your report, see `prompt-templates/06-Agent-Loop.md` for multi-model review setup.
-
-> 💡 **Works without AI too.** The entire SOP is a pure methodology — no AI tools required. AI is an accelerator, not a requirement.
-
----
-
-## 🤖 What Is an Agent Loop?
-
-An Agent Loop = two AI models reviewing each other's work to catch blind spots.
-
-```
-Your survey draft
-      ↓
-Primary model (Claude/GPT) → Reviews wording, logic, coverage
-      ↓
-Review model (DeepSeek) → Finds factual errors, missing dimensions, counterexamples
-      ↓
-You confirm edits → Proceed to next phase
-```
-
-**Setup guide:** [`prompt-templates/06-Agent-Loop.md`](prompt-templates/06-Agent-Loop.md)
-
----
-
-## 📌 Prerequisites
-
-### Required (Free)
-
-- Any Markdown editor (VS Code, Typora, even Notepad works)
-- An AI chat tool (ChatGPT, Claude, DeepSeek, Kimi — pick any one)
-
-### Recommended
-
-- **Dual AI models**: one for generation, one for review (e.g., Claude + DeepSeek)
-- **Tavily API**: for competitive data search (free tier is enough)
-- **Hermes Agent**: auto-loads this SOP and runs the Agent Loop (optional)
-
-### Not Required
-
-- ❌ No coding needed
-- ❌ No software installation needed
-- ❌ No paid APIs (free models work fine)
-
----
-
-## ❓ FAQ
-
-**Q: What if I only have one AI model (no second model for review)?**
-A: You can still use it. Draft in one conversation, then open a new conversation and ask the model to review your draft. The effect is slightly weaker than dual-model review, but much better than nothing.
-
-**Q: I'm doing user research solo — no team. Can I still use this?**
-A: Absolutely. This SOP was designed for solo researchers. The Agent Loop's "review model" replaces the role of a colleague doing a peer review.
-
-**Q: I'm not a user researcher — can I use this?**
-A: Yes. Product managers doing competitive analysis, operations teams doing user research, entrepreneurs validating markets — the core methodology is universal.
-
-**Q: How do I use this with Hermes Agent?**
-A: Place `SKILL.md` in your `~/.hermes/skills/` directory. Hermes will auto-detect and load it. Then just say "help me do user research" and it will follow the SOP workflow.
-
-**Q: How do I modify the SOP content?**
-A: Fork this repo, make your changes, and submit a PR. Or edit `SKILL.md` locally to tailor it to your specific business context.
-
----
-
-## 📝 Changelog
+## Changelog
 
 | Version | Date | Changes |
 |---------|------|---------|
 | V1.0 | 2026-06 | Six-phase linear workflow + 4 templates |
 | V2.0 | 2026-06 | Added Agent Loop, pitfall warnings, sub-processes |
 | V2.1 | 2026-06 | Rewritten README, 6 prompt templates, 3 examples, FAQ |
+| V3.0 | 2026-07 | AI-first rewrite: guidance script, rules over templates, decision tree |
 
 ---
 
-## 📄 License
+## Author
+
+**Diandian** — User Researcher, 2+ years UX Research experience, Psychology background
+
+---
+
+## License
 
 MIT — Use it however you want, including commercially. Just give credit.
-
----
-
-> Author: [diandian1001](https://github.com/diandian1001) · User Researcher · Shenzhen
