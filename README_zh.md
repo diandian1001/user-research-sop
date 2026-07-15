@@ -1,16 +1,57 @@
-# 用户研究 SOP V3.0
+# AI 用户研究操作系统 V4.0
 
-**ResearchOps Agent Skill — AI 引导式用户研究工作流**
+**AI User Research Operating System — 可移植、可执行、可追踪的研究工作包**
 
 [English](README.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-7c5cfc.svg)](https://opensource.org/licenses/MIT)
 [![Stars](https://img.shields.io/github/stars/diandian1001/user-research-sop?style=social)](https://github.com/diandian1001/user-research-sop)
-[![Version](https://img.shields.io/badge/Version-V3.0-10b981.svg)](https://github.com/diandian1001/user-research-sop)
+[![Version](https://img.shields.io/badge/Version-V4.0-10b981.svg)](https://github.com/diandian1001/user-research-sop)
 
-把这个仓库地址丢给任何 AI 工具（ChatGPT、Claude、Hermes），AI 就变成你的用研助手，一步步带你从理解需求到交付报告。
+把这个仓库交给 AI 或 Agent，它可以从业务决策定义开始，自动选择研究方法、生成材料、维护项目状态、管理证据，并输出可直接使用的研究交付物。
 
-> **V3.0**：重写为 AI 引导脚本。只给规则不给模板——AI 根据你的具体研究需求生成材料。
+本仓库提供三种入口：
+
+| 入口 | 文件 | 适用场景 |
+|---|---|---|
+| Agent 仓库模式 | `AGENTS.md` | Hermes、Codex、Claude Code 等能读取仓库的 Agent |
+| Skill 模式 | `SKILL.md` | 支持系统指令、Project Knowledge 或 Skill 的平台 |
+| 任意 AI 便携模式 | `PORTABLE.md` | 无法完整读取 GitHub 仓库的普通 AI 对话 |
+
+> 清晰任务默认使用“快速执行模式”。AI 只在缺失信息会实质改变方法或结论时提问。
+
+---
+
+## 一句话启动
+
+### 仓库模式
+
+```text
+读取 AGENTS.md，并使用这个仓库完成以下用户研究任务：
+[粘贴任务]
+```
+
+### Skill 模式
+
+```text
+使用 SKILL.md，以快速执行模式完成：
+[粘贴任务]
+```
+
+### 任意 AI 模式
+
+复制 `PORTABLE.md` 全文，然后追加任务。
+
+AI 的首轮输出应包含：
+
+* 任务理解；
+* 业务决策；
+* 执行模式；
+* 推荐方法；
+* 已确认信息；
+* 默认假设；
+* 关键缺口；
+* 下一步动作。
 
 ---
 
@@ -114,11 +155,17 @@
 
 ```
 user-research-sop/
-├── SKILL.md                 ← 核心：AI 引导脚本（V3.0）
+├── AGENTS.md                ← Agent 仓库加载与执行协议
+├── PORTABLE.md              ← 可复制给任意 AI 的单文件便携版
+├── SKILL.md                 ← 核心：AI 用户研究操作系统（V4.0）
 ├── README.md                ← 英文说明文档
 ├── README_zh.md             ← 中文说明文档（本文件）
 ├── LICENSE                  ← MIT 许可证
+├── evaluation/
+│   └── benchmark.md         ← 跨平台重复运行 Benchmark 设计
 ├── templates/               ← 空白模板（可直接使用）
+│   ├── project-state.md
+│   ├── evidence-ledger.md
 │   ├── 需求确认表.md
 │   ├── 访谈记录表.md
 │   ├── 数据提需模板.md
@@ -153,12 +200,18 @@ user-research-sop/
 
 ---
 
-## V3.0 更新了什么
+## V4.0 核心升级
 
-- **AI 优先设计**：SKILL.md 从静态文档改为 AI 对话脚本
-- **给规则不给模板**：访谈提纲和问卷由 AI 根据需求生成，不套固定模板
-- **决策树**：方法选择有明确的判断逻辑
-- **质检内置**：每个环节都有质量检查点
+- **三种执行模式**：快速执行、标准协作、引导教学；
+- **Agent 加载协议**：通过 `AGENTS.md` 规定读取和执行顺序；
+- **单文件便携版**：`PORTABLE.md` 可直接复制给任意 AI；
+- **决策优先**：研究开始前明确业务决策；
+- **项目状态管理**：跨阶段记录范围、口径、假设和进度；
+- **Claim 级证据账本**：结论可以追溯到数据、原话和来源；
+- **自动交付**：AI 根据证据自动生成报告，不要求用户重新填空；
+- **方法规则修正**：取消固定 500 份样本、固定 5% 差异阈值和默认 NPS；
+- **跨工作流路由**：复杂竞品分析转交专门竞品分析工作流；
+- **Benchmark**：建立跨平台、重复运行的稳定性测试方案。
 
 ---
 
@@ -170,6 +223,7 @@ user-research-sop/
 | V2.0 | 2026-06 | 加入 Agent Loop、踩坑沉淀、子流程 |
 | V2.1 | 2026-06 | 重写 README、6个提示词模板、3个案例 |
 | V3.0 | 2026-07 | AI 优先重写：引导脚本、给规则不给模板、决策树 |
+| V4.0 | 2026-07 | 执行封装升级：AGENTS、PORTABLE、项目状态、证据账本、自动交付与 Benchmark |
 
 ---
 
