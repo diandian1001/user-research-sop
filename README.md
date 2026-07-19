@@ -76,12 +76,13 @@ The first response should state the task understanding, business decision, execu
 | Validating hypotheses at scale | Survey/questionnaire design | Quantitative validation — *what* and *how much* |
 | Competitive landscape analysis | Desktop research | Understanding what others are doing |
 | Conversion & retention analysis | Funnel analysis | Finding where users drop off |
+| Usability testing | Task-based observation protocols | Whether users can complete key tasks |
+| Concept/prototype testing | Value proposition and concept evaluation | Whether users understand and relate to a proposed solution |
 
-### Not Currently Supported
+### Not Currently Supported (require specialized tools or full execution environment)
 
-- Usability testing (requires task-based observation protocols)
 - Eye-tracking / biometric studies
-- A/B testing design and statistical power analysis
+- A/B testing design and full statistical power analysis
 - Longitudinal / diary studies
 - Field ethnography
 - Accessibility audits
@@ -158,7 +159,12 @@ user-research-sop/
 │   ├── 需求确认表.md
 │   ├── 访谈记录表.md
 │   ├── 数据提需模板.md
-│   └── Agent-Loop-审查清单.md
+│   ├── Agent-Loop-审查清单.md
+│   ├── 可用性测试计划.md
+│   ├── 可用性测试观察记录表.md
+│   ├── 可用性问题证据表.md
+│   ├── 概念测试计划.md
+│   └── 概念测试记录表.md
 ├── examples/                ← Filled examples & case studies
 │   ├── 完整案例-Walkthrough.md
 │   ├── case-telecom-conversion-diagnosis.md  ← Real case study
